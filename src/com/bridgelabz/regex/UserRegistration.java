@@ -38,14 +38,13 @@ public class UserRegistration {
 		System.out.println("Enter email id");
 		String email = sc.nextLine();
 
-		boolean validEmail = Pattern.matches("^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2,})*$", email);
+		boolean validEmail = Pattern.matches("[a-zA-z0-9][a-zA-z0-9_.]*@[a-zA-Z0-9]+([.][a-zA-z]+)+", email);
 		if (validEmail) {
 			System.out.println("Email is valid");
 		} else {
 			System.out.println("Email is invalid");
 		}
 	}
-
 	public void validPhoneNumber() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Phone number: ");
@@ -64,6 +63,7 @@ public class UserRegistration {
 		String password = sc.nextLine();
 
 		boolean validatePassword = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&*+=]).{8,}$", password);
+		
 		if (validatePassword) {
 			System.out.println("password is valid");
 		} else {
@@ -76,9 +76,9 @@ public class UserRegistration {
 		UserRegistration userRegistration = new UserRegistration();
 		// userRegistration.validFirstName();
 		// userRegistration.validLastName();
-		// userRegistration.validEmailId();
+		 userRegistration.validEmailId();
 		// userRegistration.validPhoneNumber();
-		userRegistration.validPassword();
+		//userRegistration.validPassword();
 	}
 
 }
